@@ -12,3 +12,6 @@
 
 
 
+- live demo [her](https://assignment.mohammedalbadry.com)
+- Admin's credentials: __admin@gmail.com__ - __123123__
+- user's credentials: __user@gmail.com__ - __123123__
