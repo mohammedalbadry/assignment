@@ -15,13 +15,13 @@ class TimetableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < 30; $i++) { 
+        for ($i=0; $i < 10; $i++) { 
             $timetable = Timetable::create([
                 "title" => "event_title",
                 "user_id" => 1,
                 "pharmacy_id" => 1,
-                "start_time" => Carbon::now()->addHours($i * random_int( 1, 12)),
-                "end_time" => Carbon::now()->addHours($i * random_int( 13, 24)),
+                "start_time" => Carbon::now()->addHours($i + 10),
+                "end_time" => Carbon::now()->addHours($i*12),
             ]);
         }
     }

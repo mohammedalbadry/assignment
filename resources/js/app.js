@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import "./assets/icons/fa.js"
 
 window.Vue = require('vue').default;
+Vue.config.productionTip = false
 Vue.component('fa', FontAwesomeIcon)
 Vue.component('pagination', require('laravel-vue-pagination'));
 Vue.use(VueToast, { position: 'top-right' })
@@ -34,7 +35,7 @@ const valid_authentication = new Promise((resolve) => {
   else{
 
     axios({
-      url: 'auth/me/',
+      url: '/auth/me',
       method: 'post',
       headers: {'authorization': "Bearer " + token}
     })
@@ -78,7 +79,7 @@ const valid_admin_authentication = new Promise((resolve) => {
   else{
 
     axios({
-      url: 'admin/me/',
+      url: '/admin/me',
       method: 'post',
       headers: {'authorization': "Bearer " + admin_token}
     })

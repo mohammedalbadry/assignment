@@ -69,7 +69,7 @@ const store = new Vuex.Store({
             fd.append('email', payload.email)
 			fd.append('password', payload.password)
 			
-            axios({ url: '/auth/login/', method: 'post',  data: fd })
+            axios({ url: '/auth/login', method: 'post',  data: fd })
             .then(response=> {
                 if(response.data.status == "error"){
 					context.commit('setError', response.data.error)
@@ -82,7 +82,7 @@ const store = new Vuex.Store({
 		},
 		attempAction(context, token){
 			axios({
-				url: 'auth/me/',
+				url: '/auth/me',
 				method: 'post',
 				headers: {'authorization': "Bearer " + token}
 			})
@@ -113,7 +113,7 @@ const store = new Vuex.Store({
 		},
 		logoutAction(context) {
 			axios({
-				url: '/auth/logout/',
+				url: '/auth/logout',
 				method: 'post',
 			})
 			.then(response=> {
@@ -135,7 +135,7 @@ const store = new Vuex.Store({
             fd.append('email', payload.email)
             fd.append('password', payload.password)
             axios({
-                    url: '/auth/login/',
+                    url: '/admin/login',
                     method: 'post',
                     data: fd,
             })
@@ -152,7 +152,7 @@ const store = new Vuex.Store({
 		AdminAttempAction(context, token){
 
 			axios({
-				url: 'admin/me/',
+				url: '/admin/me',
 				method: 'post',
 				headers: {'authorization': "Bearer " + token}
 			})
@@ -184,7 +184,7 @@ const store = new Vuex.Store({
 		
 		},
 		AdminLogoutAction(context) {
-			axios({	url: '/admin/logout/', method: 'post' })
+			axios({	url: '/admin/logout', method: 'post' })
 			.then(response=> {
 				context.commit('setAdminError', null)
 				context.commit('setAdminToken', null)
